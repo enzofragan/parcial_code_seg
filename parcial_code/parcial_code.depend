@@ -6,7 +6,7 @@
 	<ctype.h>
 	"alquiler.h"
 
-1539218633 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.c
+1539218797 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,7 +22,7 @@
 
 1539218260 c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.h
 
-1539218279 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
+1539218648 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alquiler.h"

@@ -293,18 +293,18 @@ int mostrarOrdenJuegos(eJuegos lista[],int tam)
         {
             if(lista[i].estado==1 && lista[i].estado==1)
             {
-                if(lista[i].importe>lista[j].importe)
-                {
-                    aux=lista[i];
-                    lista[i]=lista[j];
-                    lista[j]=aux;
-                }
                 if(strcmp(lista[i].descripcion,lista[j].descripcion)<0)
                 {
                     aux=lista[i];
                     lista[i]=lista[j];
                     lista[j]=aux;
                     ret=1;
+                }
+                if(lista[i].importe>lista[j].importe)
+                {
+                    aux=lista[i];
+                    lista[i]=lista[j];
+                    lista[j]=aux;
                 }
             }
         }

@@ -345,18 +345,18 @@ int mostrarOrdenClientes(eCliente listaC[],int tam)
         {
             if(listaC[i].estado==1 && listaC[i].estado==1)
             {
-                if(strcmp(listaC[i].apellido,listaC[j].apellido)<0)
-                {
-                    aux=listaC[i];
-                    listaC[i]=listaC[j];
-                    listaC[j]=aux;
-                }
                 if(strcmp(listaC[i].nombre,listaC[j].nombre)<0)
                 {
                     aux=listaC[i];
                     listaC[i]=listaC[j];
                     listaC[j]=aux;
                     ret=1;
+                }
+                if(strcmp(listaC[i].apellido,listaC[j].apellido)<0)
+                {
+                    aux=listaC[i];
+                    listaC[i]=listaC[j];
+                    listaC[j]=aux;
                 }
             }
         }
