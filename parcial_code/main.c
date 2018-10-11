@@ -22,6 +22,7 @@ int main()
     int altaC;
     int modiC;
     int bajaC;
+    int altaA;
 
     game=iniciarJuegos(juego,TAMJ);
     game=iniciarJuegosHardcode(juego);
@@ -148,6 +149,9 @@ int main()
                 {
                     printf("inicie un lista primero\n");
                 }
+                break;
+            case 3:
+                altaA=altaAlquiler(alquiler,TAMA,juego,TAMJ,cliente,TAMC);
                 break;
             case 4:
                 seguir='n';

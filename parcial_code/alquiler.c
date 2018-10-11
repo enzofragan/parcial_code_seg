@@ -295,7 +295,7 @@ int autoIdAlquiler(eAlquiler listaA[],int tam)
     int i;
     int id;
 
-    i=buscarLibreClientes(listaA,tam);
+    i=buscarLibreAlquiler(listaA,tam);
 
     id=i+1;
 
@@ -322,40 +322,46 @@ int altaAlquiler(eAlquiler listaA[],int tamanioA,eJuegos lista[],int tamanioJ,eC
 
         cliente=buscarIdClientes(listaC,tamanioC);
 
-        if(cliente<0)
+        if(cliente>=0)
+        {
+            mostrarListaDeJuegos(lista,tamanioJ);
+
+            juego=buscarIdJuego(lista,tamanioJ);
+
+            if(juego>=0)
+            {
+                printf("ingrese la fecha del alquiler ");
+                fflush(stdin);
+                gets(fecha);
+
+                while(esFecha(fecha)==-1)
+                {
+                    printf("ingrese una fecha valida ");
+                    fflush(stdin);
+                    gets(fecha);
+                }
+
+                if(id>0)
+                {
+                    listaA[i].idAlquiler=id;
+                    listaA[i].cliente=listaC[cliente].idCliente;
+                    listaA[i].juego=lista[juego].idJuedo;
+                    strcpy(listaA[i].fecha,fecha);
+                    listaA[i].estado=1;
+                    ret=1;
+
+                    mostrarListaDeAlquiler(listaA,tamanioA);
+                }
+            }
+            else
+            {
+                printf("id del juego no encontrado\n");
+            }
+        }
+        else
         {
             printf("id del cliente no encontrado\n");
         }
-
-        mostrarListaDeJuegos(lista,tamanioJ);
-
-        juego=buscarLibreJuegos(lista,tamanioJ);
-
-        if(juego<0)
-        {
-            printf("id del juego no encontrado\n");
-        }
-
-        printf("ingrese la fecha del alquiler ");
-        fflush(stdin);
-        gets(fecha);
-
-        while(esFecha(fecha)==-1)
-        {
-            printf("ingrese una fecha valida ");
-            fflush(stdin);
-            gets(fecha);
-        }
-
-        if(id>0)
-        {
-            listaA[i].idAlquiler=id;
-            listaA[i].cliente=listaC[cliente].idCliente;
-            listaA[i].juego=lista[juego].idJuedo;
-            strcpy(listaA[i].fecha,fecha);
-            listaA[i].estado=1;
-        }
-
         //system("pause");
     }
     else

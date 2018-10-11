@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1539214384 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\alquiler.c
+1539216207 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\alquiler.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -22,7 +22,7 @@
 
 1539201153 c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.h
 
-1539214696 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
+1539217122 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alquiler.h"
