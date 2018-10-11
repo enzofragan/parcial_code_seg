@@ -262,7 +262,7 @@ int bajaJuego(eJuegos lista[],int tam)
 
         if(respuesta=='s')
         {
-            lista[i].estado=0;
+            lista[i].estado=-2;
             ret=1;
             mostrarListaDeJuegos(lista,tam);
         }
@@ -276,6 +276,41 @@ int bajaJuego(eJuegos lista[],int tam)
     {
         printf("\nid no encontrado\n\n");
     }
+
+    return ret;
+}
+
+int mostrarOrdenJuegos(eJuegos lista[],int tam)
+{
+    int i;
+    int j;
+    int ret=-1;
+    eJuegos aux;
+
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(lista[i].estado==1 && lista[i].estado==1)
+            {
+                if(lista[i].importe>lista[j].importe)
+                {
+                    aux=lista[i];
+                    lista[i]=lista[j];
+                    lista[j]=aux;
+                }
+                if(strcmp(lista[i].descripcion,lista[j].descripcion)<0)
+                {
+                    aux=lista[i];
+                    lista[i]=lista[j];
+                    lista[j]=aux;
+                    ret=1;
+                }
+            }
+        }
+    }
+
+    mostrarListaDeJuegos(lista,tam);
 
     return ret;
 }

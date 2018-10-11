@@ -85,7 +85,7 @@ int main()
                             }
                             break;
                         case 4:
-                            mostrarListaDeJuegos(juego,TAMJ);
+                            mostrarOrdenJuegos(juego,TAMJ);
                             break;
                         }
 
@@ -139,7 +139,7 @@ int main()
                             }
                             break;
                         case 4:
-                            mostrarListaDeClientes(cliente,TAMC);
+                            mostrarOrdenClientes(cliente,TAMC);
                             break;
                         }
 

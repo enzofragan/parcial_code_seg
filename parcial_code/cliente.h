@@ -25,3 +25,4 @@ int buscarIdClientes(eCliente [],int );
 int repeticionClientes(eCliente [],char [],char [],int );
 int modificacionClientes(eCliente [],int );
 int bajaClientes(eCliente [],int );
+int mostrarOrdenClientes(eCliente [],int );

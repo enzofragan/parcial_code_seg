@@ -1,33 +1,33 @@
 # depslib dependency file v1.0
-1539216207 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\alquiler.c
+1539217240 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\alquiler.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"alquiler.h"
 
-1539216038 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.c
+1539218633 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"cliente.h"
 
-1539216038 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.c
+1539218260 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"juegos.h"
 
-1539201153 c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.h
+1539218260 c:\users\administrador\desktop\parcial_code_seg\parcial_code\juegos.h
 
-1539217122 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
+1539218279 source:c:\users\administrador\desktop\parcial_code_seg\parcial_code\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alquiler.h"
 
-1539206116 c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.h
+1539218605 c:\users\administrador\desktop\parcial_code_seg\parcial_code\cliente.h
 
 1539215337 c:\users\administrador\desktop\parcial_code_seg\parcial_code\alquiler.h
 	"juegos.h"

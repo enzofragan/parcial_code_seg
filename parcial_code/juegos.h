@@ -23,3 +23,4 @@ int buscarIdJuego(eJuegos [],int );
 int repeticionJuego(eJuegos [],char [],int );
 int modificacionJuego(eJuegos [],int );
 int bajaJuego(eJuegos [],int );
+int mostrarOrdenJuegos(eJuegos [],int );

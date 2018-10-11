@@ -314,7 +314,7 @@ int bajaClientes(eCliente listaC[],int tam)
 
         if(respuesta=='s')
         {
-            listaC[i].estado=0;
+            listaC[i].estado=-2;
             ret=1;
             mostrarListaDeClientes(listaC,tam);
         }
@@ -328,6 +328,41 @@ int bajaClientes(eCliente listaC[],int tam)
     {
         printf("\nid no encontrado\n\n");
     }
+
+    return ret;
+}
+
+int mostrarOrdenClientes(eCliente listaC[],int tam)
+{
+    int i;
+    int j;
+    int ret=-1;
+    eCliente aux;
+
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(listaC[i].estado==1 && listaC[i].estado==1)
+            {
+                if(strcmp(listaC[i].apellido,listaC[j].apellido)<0)
+                {
+                    aux=listaC[i];
+                    listaC[i]=listaC[j];
+                    listaC[j]=aux;
+                }
+                if(strcmp(listaC[i].nombre,listaC[j].nombre)<0)
+                {
+                    aux=listaC[i];
+                    listaC[i]=listaC[j];
+                    listaC[j]=aux;
+                    ret=1;
+                }
+            }
+        }
+    }
+
+    mostrarListaDeClientes(listaC,tam);
 
     return ret;
 }
