@@ -205,3 +205,163 @@ int esDomicilio(char* cadena)
     return 1;
 }
 
+int esFecha(char* cadena)
+{
+    int i=0;
+    if(cadena!=NULL)
+    {
+        while(cadena[i]!='\0')
+        {
+            if(!(isdigit(cadena[i])) && cadena[i]!='/')
+            {
+                return -1;
+            }
+            i++;
+        }
+    }
+    return 1;
+}
+
+int iniciarAlquiler(eAlquiler listaA[],int tam)
+{
+    int i;
+    int ret=-1;
+
+    for(i=0;i<tam;i++)
+    {
+        listaA[i].estado=0;
+        ret=1;
+    }
+
+    return ret;
+}
+
+/*int iniciarAlquilerHardcode(eAlquiler [])
+{
+    int id[5] = {10,11,12,13,14};
+    char nombre[5][51] = {"enzo","luis","ana","lisa","robert"};
+    char apellido[5][51] = {"fragan","mario","santos","fragan","percio"};
+    char sexo[] = {'h','h','m','m','h'};
+    char domicilio[5][51] = {"111-222","222-333","333-444","444-555","555-666"};
+    int i;
+
+    for(i=0;i<5;i++)
+    {
+        listaC[i].idCliente=id[i];
+        strcpy(listaC[i].nombre,nombre[i]);
+        strcpy(listaC[i].apellido,apellido[i]);
+        listaC[i].sexo=sexo[i];
+        strcpy(listaC[i].domicilio,domicilio[i]);
+        listaC[i].estado=1;
+    }
+}*/
+
+int mostrarAlquiler(eAlquiler listaA)
+{
+    printf("\n%d %d %d %s\n",listaA.idAlquiler,listaA.cliente,listaA.juego,listaA.fecha);
+}
+
+int mostrarListaDeAlquiler(eAlquiler listaA[],int tam)
+{
+    int i;
+    for(i=0; i<tam; i++)
+    {
+        if(listaA[i].estado!=0)
+        {
+            mostrarAlquiler(listaA[i]);
+        }
+    }
+}
+
+int buscarLibreAlquiler(eAlquiler listaA[],int tam)
+{
+    int i;
+    int ret=-1;
+
+    for(i=0;i<tam;i++)
+    {
+        if(listaA[i].estado==0)
+        {
+            ret=i;
+            break;
+        }
+    }
+
+    return ret;
+}
+
+int autoIdAlquiler(eAlquiler listaA[],int tam)
+{
+    int i;
+    int id;
+
+    i=buscarLibreClientes(listaA,tam);
+
+    id=i+1;
+
+    return id;
+}
+
+int altaAlquiler(eAlquiler listaA[],int tamanioA,eJuegos lista[],int tamanioJ,eCliente listaC[],int tamanioC)
+{
+    int i;
+    int id;
+    int ret=-1;
+    int cliente;
+    int juego;
+    char fecha[51];
+
+
+    i=buscarLibreAlquiler(listaA,tamanioA);
+
+    if(i>=0)
+    {
+        id=autoIdAlquiler(listaA,tamanioA);
+
+        mostrarListaDeClientes(listaC,tamanioC);
+
+        cliente=buscarIdClientes(listaC,tamanioC);
+
+        if(cliente<0)
+        {
+            printf("id del cliente no encontrado\n");
+        }
+
+        mostrarListaDeJuegos(lista,tamanioJ);
+
+        juego=buscarLibreJuegos(lista,tamanioJ);
+
+        if(juego<0)
+        {
+            printf("id del juego no encontrado\n");
+        }
+
+        printf("ingrese la fecha del alquiler ");
+        fflush(stdin);
+        gets(fecha);
+
+        while(esFecha(fecha)==-1)
+        {
+            printf("ingrese una fecha valida ");
+            fflush(stdin);
+            gets(fecha);
+        }
+
+        if(id>0)
+        {
+            listaA[i].idAlquiler=id;
+            listaA[i].cliente=listaC[cliente].idCliente;
+            listaA[i].juego=lista[juego].idJuedo;
+            strcpy(listaA[i].fecha,fecha);
+            listaA[i].estado=1;
+        }
+
+        //system("pause");
+    }
+    else
+    {
+        printf("no hay mas espacio");
+    }
+
+    return ret;
+}

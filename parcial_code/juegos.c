@@ -158,6 +158,10 @@ int altaJuegos(eJuegos lista[],int tam)
 
         //system("pause");
     }
+    else
+    {
+        printf("no hay mas espacio\n");
+    }
 
     return ret;
 }
